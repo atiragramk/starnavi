@@ -4,13 +4,13 @@ import { characterListFetch } from '../thunk';
 interface CharacterListState {
   loading: boolean;
   error: boolean | null;
-  characterList: ICharacterList | null;
+  data: ICharacterList | null;
 }
 
 const initialState: CharacterListState = {
   loading: false,
   error: null,
-  characterList: null,
+  data: null,
 };
 
 const name = 'CHARACTER_LIST';
@@ -27,7 +27,7 @@ const characterListSlice = createSlice({
       })
       .addCase(characterListFetch.fulfilled, (state, { payload }) => {
         state.loading = false;
-        state.characterList = payload;
+        state.data = payload;
       })
       .addCase(characterListFetch.rejected, (state) => {
         state.loading = false;

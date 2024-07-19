@@ -5,9 +5,9 @@ const CHARACTER_LIST_FETCH_THUNK_TYPE = 'CHARACTER_LIST_FETCH_THUNK_TYPE';
 
 export const characterListFetch = createAsyncThunk(
   CHARACTER_LIST_FETCH_THUNK_TYPE,
-  async (_, { rejectWithValue }) => {
+  async (page: number, { rejectWithValue }) => {
     try {
-      return await getCharacterList();
+      return await getCharacterList(page);
     } catch (error) {
       return rejectWithValue(error);
     }

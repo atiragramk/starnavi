@@ -1,8 +1,8 @@
 import { client } from './client';
 
-export const getCharacterList = async () => {
+export const getCharacterList = async (page: number) => {
   try {
-    return await client.get<never, ICharacterList>(`/people`);
+    return await client.get<never, ICharacterList>(`/people/?page=${page}`);
   } catch (error) {
     return Promise.reject(error);
   }
