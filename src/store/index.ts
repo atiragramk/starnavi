@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import characterList from '../redux/characters/reducer';
-import pagination from '../redux/pagination/reducer';
+import characterList from '@/redux/characters/reducer';
+import pagination from '@/redux/pagination/reducer';
+import character from '@/redux/character/reducer';
 
 export const store = configureStore({
   reducer: {
     characterList,
     pagination,
+    character,
   },
 });
 

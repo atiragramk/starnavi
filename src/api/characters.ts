@@ -8,7 +8,7 @@ export const getCharacterList = async (page: number) => {
   }
 };
 
-export const getOneCharacter = async (id: number) => {
+export const getOneCharacter = async (id: string) => {
   try {
     return await client.get<never, ICharacterDetails>(`/people/${id}`);
   } catch (error) {

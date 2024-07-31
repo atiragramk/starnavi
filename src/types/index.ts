@@ -4,6 +4,17 @@ interface ICharacterList {
   results: ICharacterDetails[];
 }
 
+interface IFilmList {
+  count: number;
+  next: string;
+  results: IFilm[];
+}
+interface IStarShipList {
+  count: number;
+  next: string;
+  results: IStarShip[];
+}
+
 interface ICharacterDetails {
   id: number;
   name: string;
